@@ -30,18 +30,14 @@ public class Conexion {
             
             String driver = "org.sqlite.JDBC"; //escribir el driver de la base de datos
             String cadenaConexion = "jdbc:sqlite:inventario.db";
-            String usuario = "usuario";
-            String password = "contraseña";
             
             try {
                 Class.forName(driver);
-                Connection con = DriverManager.getConnection(cadenaConexion, usuario, password);
-            } catch (ClassNotFoundException ex) {
+                Connection con = DriverManager.getConnection(cadenaConexion);
+            } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(Conexion.class.getName())
                         .log(Level.SEVERE, null, ex);
                 //TODO atender recuperacion a fallos
-            } catch (SQLException ex) {
-                Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return this.connection;

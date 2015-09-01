@@ -1,6 +1,8 @@
 package gestioninventarios.aplicacion;
 
 import gestioninventarios.dao.Conexion;
+import gestioninventarios.dao.ProductosDao;
+import gestioninventarios.modelo.Producto;
 
 /**
  *
@@ -8,7 +10,8 @@ import gestioninventarios.dao.Conexion;
  */
 public class aplicacion {
     public static void main(String[] args) {
-        Conexion conexion = new Conexion();
-        conexion.getConexion();
+        Producto p = new Producto(01, "descripcion", "clasificacion", 50.0, 30, 50, 10);
+        ProductosDao pdao = new ProductosDao();
+        pdao.create(p);
     }
 }
