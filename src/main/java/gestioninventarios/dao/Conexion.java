@@ -15,7 +15,7 @@ public class Conexion {
     
     private Connection connection;
     
-    private Conexion(){
+    public Conexion(){
     }
     
     public static  Conexion getInstance(){
@@ -27,8 +27,9 @@ public class Conexion {
     
     public Connection getConexion(){
         if (connection == null) {
-            String driver = ""; //escribir el driver de la base de datos
-            String cadenaConexion = "jdbc:basededatos//localhost:puerto/db";
+            
+            String driver = "org.sqlite.JDBC"; //escribir el driver de la base de datos
+            String cadenaConexion = "jdbc:sqlite:inventario.db";
             String usuario = "usuario";
             String password = "contraseña";
             

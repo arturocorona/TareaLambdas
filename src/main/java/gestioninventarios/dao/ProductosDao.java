@@ -1,5 +1,6 @@
 package gestioninventarios.dao;
 
+import gestioninventarios.modelo.Producto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,38 +13,20 @@ import java.util.logging.Logger;
  *
  * @author Oscar Arturo Corona Chavira
  */
-public class ProductosDao implements Crud {
+public class ProductosDao implements Crud <Producto> {
 
     @Override
-    public List<Usuario> list() {
-        List<Usuario> usuarios = new ArrayList();
-
-        try {
-            Statement st = Conexion.getInstance()
-                    .getConexion().createStatement();
-            ResultSet rs = st.executeQuery(String.format("SELECT %s FROM %s;", Usuario.fieldsToString(), Usuario.TABLE));
-            while (rs.next()) {
-                Integer id = rs.getInt(Usuario.FIELDS[0]);
-                String nombre = rs.getString(Usuario.FIELDS[1]);
-                String primerApellido = rs.getString(Usuario.FIELDS[2]);
-                Integer edad = rs.getInt(Usuario.FIELDS[3]);
-                Usuario usr = new Usuario(id, nombre, primerApellido, edad);
-                usuarios.add(usr);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductosDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return usuarios;
+    public List<Producto> list() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
-    public void create(Usuario usuario) {
+    public void create(Producto producto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Usuario usuario) {
+    public void update(Producto producto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

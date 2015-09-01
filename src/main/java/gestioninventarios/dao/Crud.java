@@ -1,19 +1,18 @@
 package gestioninventarios.dao;
 
 import java.util.List;
-import mx.uach.fing.manejousuarios.datos.Usuario;
 
 /**
  *
  * @author Oscar Arturo Corona Chavira
  */
-public interface Crud {
+public interface Crud <T> {
     
-    public List<Usuario> list();
+    public List<T>list();
     
-    public void create(Usuario usuario);
+    public void create(T producto);
     
-    public void update(Usuario usuario);
+    public void update(T producto);
     
     public void eliminar(Integer id);
 }

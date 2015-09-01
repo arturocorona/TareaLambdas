@@ -18,12 +18,12 @@ public class Producto {
     private String id;
     private String descripcion;
     private String clasificacion;
-    private Integer precio;
+    private Double precio;
     private Integer existencia;
     private Integer existenciaMaxima;
     private Integer existenciaMinima;
     
-    public Producto(String clave, String descripcion, String clasificacion, Integer precio, Integer existencia, Integer existenciaMaxima, Integer existenciaMinima) {
+    public Producto(String clave, String descripcion, String clasificacion, Double precio, Integer existencia, Integer existenciaMaxima, Integer existenciaMinima) {
         this.id = clave;
         this.descripcion = descripcion;
         this.clasificacion = clasificacion;
@@ -57,11 +57,11 @@ public class Producto {
         this.clasificacion = clasificacion;
     }
 
-    public Integer getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
